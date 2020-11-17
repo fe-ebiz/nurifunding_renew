@@ -1,0 +1,46 @@
+@@include('../inc/_head_top.html')
+
+<!--슬라이더 플러그인-->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!--슬라이더 플러그인-->
+
+<!--페이지 전용CSS-->
+<link rel="stylesheet" href="/static/css_new/etc/fullpage-scroll.css">
+<link rel="stylesheet" href="/static/css_new/main/init.css">
+<!--페이지 전용CSS-->
+
+
+@@include('../inc/_head_bottom.html', { "pageName": "main" })
+
+<main class="main-wrap container" role="main">
+    <div class="main-container fullpage-area">
+        
+        <!-- @@include('./_list_sect/_sect01.html') -->
+        @@include('./_list_sect/_sect02.html')
+        @@include('./_list_sect/_sect03.html')
+        <!-- @@include('./_list_sect/_sect04.html') -->
+        <!-- @@include('./_list_sect/_sect05.html') -->
+        @@include('./_list_sect/_sect_last.html')
+        @@include('./_list_sect/_sect03.html')
+        
+    </div>
+    <div class="slider-aside"></div>
+    <!-- /.sec.main-visual-sec -->
+</main>
+<!-- /.main.container -->
+
+
+<script type="text/javascript"  src="/static/js/etc/fullpage-scroll.js"></script>
+<script type="text/javascript" >
+$(document).ready(function(){
+    setFullpage(".fullpage-area","section", 350, true, ".slider-aside", ".nav-sect");
+});
+</script>
+
+
+@@include('../inc/_bottom.html')
+

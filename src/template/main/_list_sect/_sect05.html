@@ -1,0 +1,105 @@
+<section class="sect-review">
+    <article class="sect-wrapper">
+        <div class="sect-contents">
+            <div class="title-area">
+                <h4 class="title-main">누리펀딩 이용후기</h4>
+            </div>
+
+            <div class="reivew-slide-area">
+                <div class="slide-btn slide-btn-prev">
+                    <img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/main/btn_slide_left.png" alt="화살표 왼쪽">
+                </div>
+                <div class="review-area">
+                    <ul class="review-ul">
+                        <li class="review-item">
+                            <div class="title-box">
+                                <div class="name-box">
+                                    <p class="p-name">김**님</p>
+                                    <p class="p-job">프리랜서_37세 여성</p>
+                                </div>
+                                <p class="grade-box">
+                                    <span class="star-up">★★★★</span>
+                                    <span class="star-none">★</span>
+                                </p>
+                            </div>
+                            <div class="txt-box">
+                                갑작스런 자금이 필요했는데 누리펀딩으로 정말 간단하고 빠르게 해결했어요. <br>
+                                홈페이지에서 몇 가지 정보만 입력하면  
+                                가능하니, 쉽고 편리하네요.
+                            </div>
+                        </li>
+                        <li class="review-item">
+                            <div class="title-box">
+                                <div class="name-box">
+                                    <p class="p-name">김**님</p>
+                                    <p class="p-job">프리랜서_37세 여성</p>
+                                </div>
+                                <p class="grade-box">
+                                    <span class="star-up">★★★★</span>
+                                    <span class="star-none">★</span>
+                                </p>
+                            </div>
+                            <div class="txt-box">
+                                갑작스런 자금이 필요했는데 누리펀딩으로 정말 간단하고 빠르게 해결했어요. <br>
+                                홈페이지에서 몇 가지 정보만 입력하면  
+                                가능하니, 쉽고 편리하네요.
+                            </div>
+                        </li>
+                        <li class="review-item"><p>테스트다요01</p></li>
+                        <li class="review-item">테스트다요02</li>
+                        <li class="review-item">테스트다요03</li>
+                        <li class="review-item">이용후기~~~~</li>
+                    </ul>
+                    
+                </div>
+                <div class="slide-btn slide-btn-next">
+                    <img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/main/btn_slide_right.png" alt="화살표 오른쪽">
+                </div>
+            </div>
+            <div class="reivew-slide-control"></div>
+            <a class="btn-go-review sty-btn-gray" href="">이용후기 전체보기</a>
+        </div>
+        
+        
+    </article>
+</section>
+
+<script>
+$(document).ready(function(){
+    $('.review-ul').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        // arrows: false,
+        prevArrow: $(".slide-btn-prev"),
+        nextArrow: $(".slide-btn-next"),
+        responsive: [
+        {
+            breakpoint: 1261,
+            settings: {
+                arrows: false,
+            }
+        },
+        {
+            breakpoint: 721,
+            settings: {
+                slidesToShow: 1,
+                dots: true,
+                arrows: false,
+                appendDots: $(".reivew-slide-control"),
+                // slidesToScroll: 3,
+                centerMode: true,
+            }
+        }],
+
+        customPaging : function(slider, index) { 
+            return "<button type='button'></button>";
+        }
+    });
+
+
+});
+
+
+
+</script>

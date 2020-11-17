@@ -1,0 +1,145 @@
+<header class="header">
+    <section class="header-sect nav-sect">
+        <nav class="nav-area">
+            <button type="button" class="btn-open-menu mobile-show">
+                <img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/common/drawer_menu.png" alt="햄버거 메뉴">
+            </button>
+            <div class="top-logo">
+                <a href="#none" class="logo-box">
+                    <div class="logo-base"><img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/common/logo_white.png" alt="로고"></div>
+                    <div class="logo-over"><img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/common/logo.png" alt="로고"></div>
+                </a>
+            </div>
+            <a class="bnt-go-myinfo mobile-show">
+                <img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/common/my_info.png" alt="로고">
+            </a>
+            <!--메뉴-->
+            <div class="menu-area">
+                <div class="menu-mobile-top mobile-show">
+                    <div class="top-title">
+                        <div class="title-area">
+                            <div class="icon-logo">
+
+                            </div>
+                            <div class="name-box">
+                                <p class="p-name"><span class="sty-txt-color-blue">홍길동</span>님
+                                </p>
+                            </div>
+                            <button type="button" class="btn-logout">
+
+                            </button>
+                        </div>
+                        <button type="button" class="btn-close-menu"></button>
+                    </div>
+                    <div class="top-menu-info">
+                        <ul class="menu-info-ul">
+                            
+                        </ul>
+                    </div>
+                    <div class="top-menu-funding">
+
+                    </div>
+                </div>
+                <ul class="main-menu-ul">
+                    <li>
+                        <a href="" class="none-touch">투자하기</a>
+                        <ul class="sub-menu-ul">
+                            <li><a href="">투자상품</a></li>
+                            <li><a href="">자동투자설정</a></li>
+                            <li><a href="">법인투자안내</a></li>
+                            <li><a href="">투자상품안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="none-touch">대출하기</a>
+                        <!-- <ul class="sub-menu-ul">
+                            <li>01</li>
+                            <li>02</li>
+                            <li>법인투자안내</li>
+                            <li>투자상품 안내</li>
+                        </ul> -->
+                    </li>
+                    <li><a href="">누리워드</a></li>
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">회사소개</a></li>
+                </ul>
+                <div class="menu-mobile-bottom mobile-show">바텀~~~~</div>
+            </div>
+            <!--//메뉴-->
+            <ul class="menu-member-ul">
+                <li><a href="">회원가입</a></li>
+                <li><a href="">로그인</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-area-sub mobile-show">
+            <ul class="menu-sub-ul mobile-show">
+                <li><a class="active"><span>홈</span></a></li>
+                <li><a class="active"><span class="mark">투자하기</span></a></li>
+                <li><a><span>대출하기</span></a></li>
+                <li><a><span>누리워드</span></a></li>
+            </ul>
+        </nav>
+        <div class="sub-menu-bg"></div>
+    </section>
+</header>
+
+<script>
+$(document).ready(function(){
+    
+    let overMenu = null;
+    let subMenuBG = $(".nav-sect .sub-menu-bg");
+    // $(".menu-area-ul>li:first>a").addClass("over");
+    $(".main-menu-ul>li>a").hover(function(e){
+        $(this).addClass("over");
+        //서브메뉴가 있으면
+        if($(this).siblings(".sub-menu-ul").length > 0){
+            subMenuBG.show();
+        }
+        else{
+            subMenuBG.hide();
+        }
+
+    }, function(e){ //나가면
+        overMenu = $(this);
+        // console.log(overMenu);
+        $(this).removeClass("over");
+
+        let startY = subMenuBG.offset().top -1;            
+        
+            if(e.pageY < startY ){
+                
+                // subMenuBG.show();
+                subMenuBG.hide();
+            }
+    });
+
+    
+    //서브메뉴 배경
+    subMenuBG.hover(function(){
+        overMenu.addClass("over");
+        
+    },function(){ //나가면
+        overMenu.removeClass("over");
+        subMenuBG.hide();
+    });
+    
+    $(".nav-sect .sub-menu-ul").hover(function(){ 
+        $(this).siblings("a").addClass("over");
+        subMenuBG.show();
+    }, function(){ //나가면
+        $(this).siblings("a").removeClass("over");
+    });
+
+
+    //모바일쪽
+    $(".btn-open-menu").on("touchstart",function(e){
+        e.preventDefault();
+        $(".menu-area").animate({
+            'left': "0"
+        },80)
+    });
+
+
+});
+</script>
+

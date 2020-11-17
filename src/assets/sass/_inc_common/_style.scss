@@ -1,0 +1,54 @@
+
+/*==스타일 공통==*/
+
+.sty-btn-white{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+    border-radius: 4px;
+    color: white;
+    height: 50px;
+    width: 220px;
+    font-size: 20px;
+}
+@media(max-width:720px){
+.sty-btn-white{
+    width: 35.0rem;
+    height: 7.0rem;
+    font-size: 3.2rem;
+    font-weight: 300;
+}
+}
+
+
+.sty-btn-gray{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #acb4bb;
+    border-radius: 4px;
+    color: #333;
+    height: 50px;
+    width: 220px;
+    font-size: 20px;
+}
+
+
+@media(max-width:720px){
+    .sty-btn-gray{
+        width: 35.0rem;
+        height: 7.0rem;
+        font-size: 3.2rem;
+        font-weight: 300;
+    }
+    }
+    
+
+.sty-txt-color-blue{
+    color: #398fe1 !important;
+}
+
+.sty-txt-color-blue01{
+    color: #158fdc !important;
+}
