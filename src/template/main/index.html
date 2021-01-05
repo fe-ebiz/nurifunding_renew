@@ -1,46 +1,186 @@
-@@include('../inc/_head_top.html')
-
-<!--슬라이더 플러그인-->
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<!--슬라이더 플러그인-->
+@@include('../include/_head_top.html')
 
 <!--페이지 전용CSS-->
-<link rel="stylesheet" href="/static/css_new/etc/fullpage-scroll.css">
-<link rel="stylesheet" href="/static/css_new/main/init.css">
-<!--페이지 전용CSS-->
+<link rel="stylesheet" href="/static/css/new/main/fullpage_scroll.css">
+<link rel="stylesheet" href="/static/css/new/main/init.css">
+<!--./페이지 전용CSS-->
+
+<!--온투법/리브메이트 팝업 관련-->
+<link rel="stylesheet" href="/static/css/new/pop/pop_duble.css">
+<!--./온투법/리브메이트 팝업 관련-->
+
+<!--슬라이더 플러그인-->
+<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="http://design.ebiznetworks.co.kr/lhc/nuri_renew/static/css/new/libs/slick.css"/>
+<script type="text/javascript" src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/static/js/new/libs/slick.min.js"></script>
+<!--./슬라이더 플러그인-->
+
+<!--페이지 전용 Js-->
+<script type="text/javascript" src="/static/js/new/main/main.js"></script>
+<script type="text/javascript" src="/static/js/new/main/fullpage-scroll.js"></script>
+<!--./페이지 전용 Js-->
 
 
-@@include('../inc/_head_bottom.html', { "pageName": "main" })
+@@include('../include/_head_bottom.html', { "pageName": "main" })
 
 <main class="main-wrap container" role="main">
     <div class="main-container fullpage-area">
         
-        <!-- @@include('./_list_sect/_sect01.html') -->
+        @@include('./_list_sect/_sect01.html')
         @@include('./_list_sect/_sect02.html')
         @@include('./_list_sect/_sect03.html')
-        <!-- @@include('./_list_sect/_sect04.html') -->
-        <!-- @@include('./_list_sect/_sect05.html') -->
+        @@include('./_list_sect/_sect04.html')
+        <!-- @include('./_list_sect/_sect05.html') -->
         @@include('./_list_sect/_sect_last.html')
-        @@include('./_list_sect/_sect03.html')
+        <!-- @@include('./_list_sect/_sect03.html') -->
         
     </div>
-    <div class="slider-aside"></div>
+    <div class="aside-page-control"></div>
+
     <!-- /.sec.main-visual-sec -->
+    <div class="aside-fn">
+        <div class="fn-box">
+            <button type="button" class="btn-open-request">
+                <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/main/btn_open_request.png" alt="문의하기">
+            </button>
+            <button type="button" class="btn-scroll-up">
+                <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/main/btn_scroll_up.png" alt="위로">
+            </button>
+        </div>
+    </div>
+
+    @@include('./_etc/_request.html')
+
+    <!--팝업-->
+    @@include('../include/modal/_pop_dubleContents.html')
+
 </main>
 <!-- /.main.container -->
 
 
-<script type="text/javascript"  src="/static/js/etc/fullpage-scroll.js"></script>
+
+<!-- <script type="text/javascript" src="/static/js/etc/fullpage-scroll.js"></script> -->
 <script type="text/javascript" >
+//메인용 스크립트
 $(document).ready(function(){
-    setFullpage(".fullpage-area","section", 350, true, ".slider-aside", ".nav-sect");
+
+    //풀페이지 관련
+    let fullpage = new setFullpage(".fullpage-area","section", 350, true, ".aside-page-control", ".header-new .nav-sect");
+
+    
+    //팝업 관련(문의하기)
+    let getInfo= fullpage.getInfo();
+    $('.btn-open-request').on("click",function(){
+        $(".modal-request").show();
+        // getInfo.setOn = false;
+        // fullpage.setInfo(getInfo);
+        fullpage.setOn(false);
+    });
+    $('.modal-request .btn-close-request').on("click",function(){
+        $(".modal-request").hide();
+        // getInfo.setOn = true;
+        // fullpage.setInfo(getInfo);
+        fullpage.setOn(true);
+    });
+    
+    $('.modal-request .btn-detail-policy').on("click",function(){
+        $(".policy-box .policy-bottom").toggle();
+        $(".policy-box .policy-top .icon-arrow-top").toggle();
+    });
+
+    $(window).on("mousewheel DOMMouseScroll",function(e){
+        if($('.modal-request').css('display') !== "none"){
+            
+        }
+    });
+
+    $('.btn-scroll-up').on("click",function(){
+        fullpage.goIndex(0);
+    });
+
+    //../팝업 관련(문의하기)
+
+
+
+    //==온투법/리브메이트==
+    //쿠키이름
+    let cokieName01 = "pop_liivemate";
+    let cokieName02 = "pop_ontolaw";
+
+    //하루 안보기 둘 중 하나만 등록되었다면 스크롤 막기
+    if($.cookie(cokieName01) == undefined || $.cookie(cokieName02) == undefined){
+            //하루 안보기 등록되었다면 그 팝업 가리기
+            if($.cookie(cokieName01) != undefined){
+            $('.pop-duble .pop01').hide();
+        }
+        if($.cookie(cokieName02) != undefined){
+            $('.pop-duble .pop02').hide();
+        }
+
+        //스크롤 막기
+        $(".pop-duble").show();
+        // $('html, body').addClass('pop-non-scroll');
+        fullpage.setOn(false);
+    }
+
+    //닫기 버튼
+    $(".pop-duble .btn-close-pop").on('click', function(){
+        //선택된 팝업창 숨기기
+        let popBox = $(this).parent().parent();
+        popBox.hide();
+        //팝업창 모두 닫혔는지 체크
+        console.log($(this));
+        checkCloseAllPopup();
+    });
+    //하루 안보기 버튼
+    $(".btn-not-day").on('click', function(){
+        //선택된 팝업창 숨기기
+        let popBox = $(this).parent().parent();
+        if($(popBox).hasClass('pop01')){
+            addCookieData(cokieName01)
+        }
+        if($(popBox).hasClass('pop02')){
+            addCookieData(cokieName02)
+        }
+        // if($(popBox).hasClass('pop-box-mobile')){
+        //     addCookieData(cokieName01)
+        //     addCookieData(cokieName02)
+        // }
+
+        popBox.hide();
+        //팝업창 모두 닫혔는지 체크
+        checkCloseAllPopup();
+    });
+
+    //쿠키데이터 등록
+    addCookieData = function(popName){
+        if($.cookie(popName) == undefined){
+            //초단위 테스트용
+            // var date = new Date;
+            // date.setTime(date.getTime() + 5*1000);
+            // $.cookie(popName, 'Y', { expires: date});
+
+            //쿠키가 없는 경우 testCookie 쿠키를 추가
+            $.cookie(popName, 'Y', { expires: 1});
+            //$.removeCookie('pop_liivemate');
+        } 
+    }
+
+    checkCloseAllPopup = function(){
+        let pop01 = $('.pop-duble .pop01').is(':visible');
+        let pop02 = $('.pop-duble .pop02').is(':visible');
+        if(pop01 == false && pop02 == false){
+            $(".pop-duble").hide();
+            // $('html, body').removeClass("pop-non-scroll");
+            fullpage.setOn(true);
+        }
+    }
 });
+
+
 </script>
 
 
-@@include('../inc/_bottom.html')
+@@include('../include/_bottom.html')
 

@@ -1,0 +1,253 @@
+
+.slick-slide, .slick-track {
+    outline: none !important
+}
+
+.main-wrap{
+    .main-slide-area{
+        height: 100%;
+        position: relative;
+        .main-slide-control{
+            z-index: 20;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 7.6rem;
+            // margin: 0 auto;
+            .control-box{
+                position: absolute;
+                left: -60.0rem;
+                display: flex;
+                align-items: center;
+                .btn-box{
+                    display: flex;
+                    // align-items: center;
+                    button{
+                        // width: 50px;
+                        color: white;
+                    }
+                    .btn-slide-pause{
+                        letter-spacing: 0.4rem;
+                        margin: 0 1.8rem;
+                    }
+                    .btn-slide{
+
+                    }
+                }
+
+                .num-box{
+                    margin-left: 3.8rem;
+                    display: flex;
+                    align-items: flex-end;
+                    p{
+                        position: relative;
+                        transform: translateY(-0.3rem);
+                        color: #fff;
+                        font-size: 2.4rem;
+                        letter-spacing: 0.12rem;
+                    }
+                    .num-current{
+                        font-size: 3.4rem;
+                    }
+                    .num-total{
+                        color: #eee;
+                        font-weight: 300;
+                    }
+                }
+            }
+            
+        }
+        .main-slide-ul{
+            height: 100%;
+            position: relative;
+            .slide-main01{
+            
+                overflow: hidden;
+                padding-top: 9.0rem;
+                width: 100%;
+                height: 100%;
+                background-color: #126cc3
+                ;
+                .slide-contents{
+                    // width: 150.0rem;
+                    max-width: 126.0rem;
+                    height: 100%;
+                    margin: 0 auto;
+                    // bottom: 0;
+                    position: relative;
+                    .title-box{
+                        position: absolute;
+                        left: 3.0rem;
+                        bottom: 25.2rem;
+                        .title-main{
+                            color: #fff;
+                            font-size: 5.45rem;
+                            text-align: center;
+                            line-height: 1.2;
+                        }
+                        .title-sub{
+                            color: #fff;
+                            font-size: 3.65rem;
+                            text-align: center;
+                            margin-top: 3.5rem;
+                        }
+                    }
+                    .img-box{
+                        position: absolute;
+                        left: 53.0rem;
+                        bottom: 0;
+                        width: 100.0rem;
+                        height: 50.6rem;
+                        .img-mobile{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-slide-ul{
+    .slick-list{
+        height: 100%;
+        
+        .slick-track{
+            height: 100%;
+            outline: none;
+        }
+    }
+    .slick-slide {
+        outline: none
+    }
+}
+
+
+@media(max-width: 720px){
+    .main-wrap{
+        .main-slide-area{
+            .main-slide-control{
+                position: absolute;
+                left: auto;
+                // right: -150px;
+                transform: none;
+                bottom: 3.0rem;
+                right: 4.0rem;
+                // margin: 0 auto;
+                .control-box{
+                    position: relative;
+                    left: auto;
+                    .btn-box{
+                        display: none;
+                        button{
+                     
+                        }
+                        .btn-slide-pause{
+               
+                        }
+                        .btn-slide{
+    
+                        }
+                    }
+    
+                    .num-box{
+                        margin-left: 0;
+                        background-color: rgba(0, 0, 0, 0.2);
+                        border-radius: 2.8rem;
+                        width: 14.0rem;
+                        padding: 1.6rem 0;
+                        justify-content: center;
+                        p{
+                            transform: none;
+                            
+                        }
+                        .num-current{
+                            font-size: 2.7rem;
+                            font-weight: 300;
+                        }
+                        .num-slush{
+                            margin: 0 0.5rem;
+                        }
+                        .num-total{
+                            font-size: 2.7rem;
+                            font-weight: 300;
+                        }
+                    }
+                }
+                
+            }
+            .main-slide-ul{
+                // height: 79.0rem;
+                // width: 50%;
+                // height: 100%;
+                height: 79.0rem;
+                .slide-main01{
+                    padding-top: 10.0rem;
+                    .slide-contents{
+                        height: auto;
+                        .title-box{
+                            // overflow: hidden;
+                            position: relative;
+                            left: 0;
+                            bottom: 0;
+                            margin: 0 auto;
+                            .title-main{
+                                font-size: 5.45rem;
+                                font-weight: 500;
+                            }
+                            .title-sub{
+                                margin-top: 3.2rem;
+                                font-size: 3.6rem;
+                                font-weight: 300;
+                            }
+                        }
+                        .img-box{
+                            margin-top: 6.2rem;
+                            position: relative;
+                            // overflow: hidden;
+                            left: 2.4rem;
+                            bottom: 0;
+                            width: 69.6rem;
+                            .img-pc{
+                                display: none;
+                            }
+                            .img-mobile{
+                                // position: absolute;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .btn-join-box{
+            .btn-go-join-invest{
+                width: 100%;
+                background-color: #398fe1;
+                height: 10.0rem;
+                color: #fff;
+                font-size: 4.0rem;
+                position: relative;
+                .icon-arrow{
+                    position: relative;
+                    padding-right: 2.0rem;
+                    &::before{
+                     
+                    }
+
+                    &::after{
+                        content: "";
+                        top: 56%;
+                        position: absolute;
+                        border: 0.6rem solid #fff;
+                        border-left: none;
+                        border-bottom: none;
+                        width: 2.0rem;
+                        height: 2.0rem;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -3,53 +3,35 @@ setSizeWidthCheck = function(info){
    
     info.setOn = false;
     
-    if(sizeWidth <= info.startSize){
+    if(sizeWidth <= 720){
         // console.log(sizeWidth);
         info.setOn = false;
         info.moveBox.removeAttr("style");
-        $("html,body").removeClass("overflow-hidden");
-        let topPos = info.selectBox.eq(info.index).position().top;
-        let correntPos = info.selectBox.eq(0).position().top + 1;
-        // console.log(correntPos);
-        window.scrollTo(0,(topPos - correntPos));
-        // console.log(info.index);
     }
     else{        
-        window.scrollTo(0,0);
-        $("html,body").addClass("overflow-hidden");
         info.setOn = true;
     }
-    
 }
 
 resizeWidthCheck = function(info){
-    let timer = null;
-    
     $(window).resize(function(){
-        info.resizing = true;
-        clearTimeout(timer);
-	    timer = setTimeout(function(){
-            info.resizing = false;
-        }, 20);
         setSizeWidthCheck(info);
     });
-    
 }
 
 
 moveBoxAni = function(info){
     //움직임 체크(휠 중복 방지)
     info.moveOn = true;
-    if(info.setOn == false) {return}
-    // window.scrollTo(0,0);
+
     //슬라이더 선택버튼 활성화
-    info.controlBoxList.children(".btn-active").removeClass("btn-active");
-    info.controlBoxList.children("li").eq(info.index).addClass("btn-active");
+    info.btnSliderBox.children(".btn-active").removeClass("btn-active");
+    info.btnSliderBox.children("li").eq(info.index).addClass("btn-active");
 
     if(info.lastBoxOn === true && info.index === info.selectBox.length -1){
         //마지막 박스 위치 계산
         let lastTopPos = info.selectBox.eq(info.index -1).position().top + info.selectBox.last().outerHeight();
-        // console.log(info.selectBox.eq(info.index -1).position().top);
+        console.log(info.selectBox.eq(info.index -1).position().top);
         //박스 이동
         info.moveBox.stop().animate({"top": -lastTopPos}, info.speed, function(){info.moveOn = false;});
         //슬라이더 이동 숨기기
@@ -66,104 +48,38 @@ moveBoxAni = function(info){
     
 }
 
-
-moveBoxAniMobile = function(info){
-
-    setIndex(info);
-    //위치
-    let topPos = info.selectBox.eq(info.index).position().top;
-    let correntPos = info.selectBox.eq(0).position().top;
-    $("html").stop().animate({scrollTop: topPos - correntPos}, info.speed, function(){info.clickMove = false});
-        
-}
-
-setIndex = function(info){
-    info.controlBoxList.children(".btn-active").removeClass("btn-active");
-    info.controlBoxList.children("li").eq(info.index).addClass("btn-active");
-}
-
-
-setControlBox = function(info){
+setBtnSlider = function(info){
     
     //슬라이더 버튼박스 생성
-    info.controlBox.addClass("page-control-box");
-    info.controlBox.append("<ul class='page-control-ul'></ul>");
-    info.controlBoxList = $('.page-control-ul');
-    
+    info.btnSlider.addClass("sliderbox");
+    info.btnSlider.append("<ul class='slider-control-box'></ul>");
+    info.btnSliderBox = $('.slider-control-box');
 
     //슬라이더 위치 계산
-    // info.btnSliderPos = $(window).outerWidth() - (info.controlBoxList.position().left + info.controlBoxList.outerWidth());
+    info.btnSliderPos = $(window).outerWidth() - (info.btnSlider.position().left + info.btnSlider.outerWidth());
 
     //슬라이더 버튼 생성
     info.selectBox.each(function(i){
         if(i == 0){
-            info.controlBoxList.append("<li class='btn-active'></li>");
+            info.btnSliderBox .append("<li class='btn-active'></li>");
         }
+        // else if(info.lastBoxOn === true && i === info.selectBox.length -1){
+        //     return true;
+        // }
         else{
-            info.controlBoxList.append("<li></li>");
+            info.btnSliderBox.append("<li></li>");
         }
     })
-
-    info.clickMove = false;
     //클릭시 이벤트
-    let btnList = info.controlBoxList.children("li");
+    let btnList = info.btnSliderBox.children("li");
     btnList.on("click",function(e){
-        info.clickMove = true;
-        //움직임체크 
+        //움직임체크        
         // if(info.moveOn === true) {return};
         info.index = $(this).index();
-        // console.log(info.index);
-        let sizeWidth = info.moveBox.outerWidth();
-        if(sizeWidth <= info.startSize){
-            moveBoxAniMobile(info);
-            clickOn = false;
-        }
-        else{
-            //이동
-            moveBoxAni(info);
-        }
-        // e.stopImmediatePropagation();
-        
+        //이동
+        moveBoxAni(info);
     });
-
-
-    $(window).scroll(function(e){
-        if(info.setOn === true) {return}
-        console.log("11")
-        if(info.clickMove === true) {return}
-        console.log("22")
-        if(info.resizing === true) {return}
-        console.log("작동");
-
-        let sizeWidth = info.moveBox.outerWidth();
-        if(sizeWidth <= info.startSize){
-
-            let scrollPos = window.scrollY;
-            //높이 보정값 적용(헤더 높이와 같음)
-            let correntPos = info.selectBox.eq(0).position().top + 1;
-            let scrollIndex = null;
-            $.each(info.selectBox, function(num, item){
-                let topPos = $(item).position().top - correntPos;
-
-                if(scrollPos >= topPos){
-                    scrollIndex = num;
-                    // console.log(topPos);
-                }
-            });
-            info.index = scrollIndex;
-
-            setIndex(info);
-
-        }
-
-        // console.log(info.selectBox.eq(info.index).position().top);
-        
-    });
-
-    
-
 }
-
 
 setBtnMenu = function(info){
     if(info.menu === null){
@@ -180,11 +96,9 @@ setBtnMenu = function(info){
     });
 }
 
-
-
 setMousewheel = function(info){
-    //마우스휠 작동시 이벤트
-    $(window).on("mousewheel DOMMouseScroll",function(e){   
+//마우스휠 작동시 이벤트
+$(window).on("mousewheel DOMMouseScroll",function(e){   
         if(info.setOn === false) {return};
         if(info.moveOn === true) {return};
         //마우스 이벤트
@@ -207,6 +121,7 @@ setMousewheel = function(info){
             info.headerBox.removeClass("nav-white");
         }
 
+
         moveBoxAni(info);
         e.stopPropagation();
         
@@ -216,12 +131,10 @@ setMousewheel = function(info){
 fullResizeCheck = function(info){
     $(window).resize(function(){
         if(info.setOn === false) {return};
-        
         //사이즈변경으로 인한 무브박스 위치 설정
         if(info.lastBoxOn === true && info.index === info.selectBox.length -1){
-            let reLastTopPos = info.selectBox.eq(info.index -1).position().top + info.selectBox.last().outerHeight();
+            let reLastTopPos = info.selectBox.eq(info.index -1) .position().top+ info.selectBox.last().outerHeight();
             info.moveBox.css("top",-reLastTopPos);
-            console.log(info.selectBox.eq(info.index -1).position().top);
         }
         else{
             let reTopPos = info.selectBox.eq(info.index).position().top;
@@ -234,7 +147,7 @@ fullResizeCheck = function(info){
 // setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, menuName, menuListName, btnSliderName){
 
 //세팅
-setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, controlBoxName, handerName, fromSize = 720){
+setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, btnSliderName, handerName){
     //풀페이지에 필요한 정보
     let fullPageInfo = {
         setOn:true,
@@ -247,26 +160,23 @@ setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, control
         lastBoxOn:lastBoxIs,
         // menu: $(menuName),
         // menuList: $(menuName).children(menuListName),
-        controlBox: $(controlBoxName),
+        btnSlider: $(btnSliderName),
         btnSliderBox: null,
         btnSliderPos: null,
-        headerBox: $(handerName),
-        startSize: fromSize,
-        clickMove: false,
-        resizing: false,
+        headerBox: $(handerName)
     }
 
     //처음 사이즈 체크
     setSizeWidthCheck(fullPageInfo);
     //크기체크
     resizeWidthCheck(fullPageInfo); 
-    
+
     //작동중일 때
     fullResizeCheck(fullPageInfo);
     setMousewheel(fullPageInfo);
     //setBtnMenu(fullPageInfo);
-    setControlBox(fullPageInfo);
-    // setIndex(fullPageInfo);
+    setBtnSlider(fullPageInfo);
+    
 
     // $(window).resize(function(){
     //     console.log(fullPageInfo.setOn);
@@ -277,13 +187,4 @@ setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, control
     window.onload = function(){
         setTimeout(function(){scrollTo(0,0);},10);
     }
-
-    this.getInfo = function(){
-        return fullPageInfo;
-    }
-    this.setInfo = function(setInfo){
-        fullPageInfo = setInfo;
-    }
 }
-
-

@@ -110,7 +110,7 @@ function sassDev() {
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(dest(config.sass.dest_new, {
+        .pipe(dest(config.sass.dest, {
             sourcemaps: true
         }))
         .pipe(browserSync.stream({
@@ -126,7 +126,7 @@ function sassDevAll() {
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(dest(config.sass.dest_new, {
+        .pipe(dest(config.sass.dest, {
             sourcemaps: true
         }))
         .pipe(browserSync.stream({
@@ -156,7 +156,7 @@ function css() {
         // .pipe(autoprefixer())
         // .pipe(csso())
         // .pipe(rename({suffix: '.min'}))
-        .pipe(dest(config.css.dest_new))
+        .pipe(dest(config.css.dest))
         .pipe(browserSync.stream({
             match: '**/*.css'
         }));

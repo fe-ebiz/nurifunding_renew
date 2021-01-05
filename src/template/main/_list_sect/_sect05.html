@@ -1,15 +1,15 @@
 <section class="sect-review">
-    <article class="sect-wrapper">
+    <article class="sect-wrapper sect-area-review">
         <div class="sect-contents">
             <div class="title-area">
                 <h4 class="title-main">누리펀딩 이용후기</h4>
             </div>
 
             <div class="reivew-slide-area">
-                <div class="slide-btn slide-btn-prev">
-                    <img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/main/btn_slide_left.png" alt="화살표 왼쪽">
-                </div>
-                <div class="review-area">
+                <button type="button" class="btn-slide btn-slide-prev">
+                    <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/main/btn_slide_review_prev.png" alt="화살표 왼쪽">
+                </button>
+                <div class="review-contents">
                     <ul class="review-ul">
                         <li class="review-item">
                             <div class="title-box">
@@ -52,9 +52,9 @@
                     </ul>
                     
                 </div>
-                <div class="slide-btn slide-btn-next">
-                    <img src="http://design.ebiznetworks.co.kr/lhc/ruri_renew/img/renew/main/btn_slide_right.png" alt="화살표 오른쪽">
-                </div>
+                <button type="button" class="btn-slide btn-slide-next">
+                    <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/main/btn_slide_review_next.png" alt="화살표 오른쪽">
+                </button>
             </div>
             <div class="reivew-slide-control"></div>
             <a class="btn-go-review sty-btn-gray" href="">이용후기 전체보기</a>
@@ -62,44 +62,52 @@
         
         
     </article>
+    <!-- <article class="sect-wrapper sect-area-banner">
+        <div class="sect-contents">
+            <div class="banner-slide-area">
+                <div class="banner-slide-control">
+                    <button type="button" class="btn-slide btn-slide-prev">
+                        <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/main/btn_slide_banner_prev.png" alt="배너이전">
+                    </button>
+                    <button type="button" class="btn-slide btn-slide-next">
+                        <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/main/btn_slide_banner_next.png" alt="배너이후">
+                    </button>
+                </div>
+                <ul class="banner-ul">
+                    <li class="banner01">
+                        <div class="banner-contents">
+                            <div class="txt-box">
+                                <p class="p-title"><span class="txt-high"> &lsquo;미리페이&rsquo;</span>로 필요자금 긴급지원 받자!</p>
+                                <p class="p-contents">
+                                    매번 늦는 판매대금 지급으로 상품 구입자금이 부족해 곤란하셨죠?
+                                    <br>미리페이 선지급 서비스로 간편하고 빠르게 해결하세요!
+                                </p>
+                                <p class="p-contents-mobile">늦은 정산으로 상품 구입자금 부족!<br>
+                                미리페이로  간편하고 빠르게 해결하세요!</p>
+                            </div>
+                            <div class="img-box">
+                                <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/logo_miripay.png" alt="미리페이">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="banner01" style="background-color: #c9356e;">
+                        <div class="banner-contents">
+                            <div class="txt-box">
+                                <p class="p-title"><span class="txt-high"> &lsquo;미리페이&rsquo;</span>로 필요자금 긴급지원 받자!</p>
+                                <p class="p-contents">매번 늦는 판매대금 지급으로 상품 구입자금이 부족해 곤란하셨죠?
+                                <br>미리페이 선지급 서비스로 간편하고 빠르게 해결하세요!</p>
+                            </div>
+                            <div class="img-box">
+                                <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/logo_miripay.png" alt="미리페이">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            
+            
+        </div>
+    </article> -->
 </section>
-
-<script>
-$(document).ready(function(){
-    $('.review-ul').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        // arrows: false,
-        prevArrow: $(".slide-btn-prev"),
-        nextArrow: $(".slide-btn-next"),
-        responsive: [
-        {
-            breakpoint: 1261,
-            settings: {
-                arrows: false,
-            }
-        },
-        {
-            breakpoint: 721,
-            settings: {
-                slidesToShow: 1,
-                dots: true,
-                arrows: false,
-                appendDots: $(".reivew-slide-control"),
-                // slidesToScroll: 3,
-                centerMode: true,
-            }
-        }],
-
-        customPaging : function(slider, index) { 
-            return "<button type='button'></button>";
-        }
-    });
-
-
-});
-
-
-
-</script>

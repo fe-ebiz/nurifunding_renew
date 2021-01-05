@@ -18,6 +18,7 @@ setSizeWidthCheck = function(info){
         window.scrollTo(0,0);
         $("html,body").addClass("overflow-hidden");
         info.setOn = true;
+        setHeaderWhiteBG(info);
     }
     
 }
@@ -63,6 +64,9 @@ moveBoxAni = function(info){
         //슬라이더 보이기
         // info.btnSlider.stop().animate({"right": info.btnSliderPos,"opacity":1.0},400,function(){});
     }
+
+    //인덱스에 따른 헤더 스타일 적용
+    setHeaderWhiteBG(info);
     
 }
 
@@ -129,11 +133,11 @@ setControlBox = function(info){
 
     $(window).scroll(function(e){
         if(info.setOn === true) {return}
-        console.log("11")
+        // console.log("11")
         if(info.clickMove === true) {return}
-        console.log("22")
+        // console.log("22")
         if(info.resizing === true) {return}
-        console.log("작동");
+        // console.log("작동");
 
         let sizeWidth = info.moveBox.outerWidth();
         if(sizeWidth <= info.startSize){
@@ -180,7 +184,14 @@ setBtnMenu = function(info){
     });
 }
 
-
+setHeaderWhiteBG = function(info){
+    if(info.index > 0){
+        info.headerBox.addClass("nav-white");
+    }
+    else{
+        info.headerBox.removeClass("nav-white");
+    }
+}
 
 setMousewheel = function(info){
     //마우스휠 작동시 이벤트
@@ -197,14 +208,6 @@ setMousewheel = function(info){
         //휠다운
         else if(mouseEvent > 0 && (info.index-1) >= 0){
             info.index--;
-        }
-
-        //인덱스에 따른 헤더 스타일 적용
-        if(info.index > 0){
-            info.headerBox.addClass("nav-white");
-        }
-        else{
-            info.headerBox.removeClass("nav-white");
         }
 
         moveBoxAni(info);
@@ -256,11 +259,15 @@ setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, control
         resizing: false,
     }
 
+    //헤더메뉴
+    setHeaderWhiteBG(fullPageInfo);
+
     //처음 사이즈 체크
     setSizeWidthCheck(fullPageInfo);
     //크기체크
     resizeWidthCheck(fullPageInfo); 
     
+
     //작동중일 때
     fullResizeCheck(fullPageInfo);
     setMousewheel(fullPageInfo);
@@ -271,7 +278,6 @@ setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, control
     // $(window).resize(function(){
     //     console.log(fullPageInfo.setOn);
     // });
-
 
     //새로고침시 위에 고정
     window.onload = function(){
@@ -284,6 +290,36 @@ setFullpage = function(moveBoxName, selectBoxName, moveSpeed, lastBoxIs, control
     this.setInfo = function(setInfo){
         fullPageInfo = setInfo;
     }
+
+    this.setOn = function(setOn){
+        fullPageInfo.setOn = setOn;
+
+        let sizeWidth = fullPageInfo.moveBox.outerWidth();
+        if(sizeWidth <= fullPageInfo.startSize){
+            fullPageInfo.setOn = false;
+        }
+        $(window).resize(function(){
+            if(sizeWidth <= fullPageInfo.startSize){
+                fullPageInfo.setOn = false;
+            }
+            else{
+                fullPageInfo.setOn = setOn;
+            }
+        });
+    }
+
+    this.goIndex = function(index){
+        fullPageInfo.index = index;
+        let sizeWidth = fullPageInfo.moveBox.outerWidth();
+        if(sizeWidth <= fullPageInfo.startSize){
+            moveBoxAniMobile(fullPageInfo);
+        }
+        else{
+            moveBoxAni(fullPageInfo);
+        }
+    }
+
+
 }
 
 
