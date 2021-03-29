@@ -4,7 +4,7 @@
     .footer-top{
         width: 100%;
         // background-color: #212121;
-        border-bottom: 1px solid #777;
+        border-bottom: 1px solid #555;
         .footer-wrapper{
             margin: 0 auto;
             // width: 1200px;
@@ -118,6 +118,7 @@
                             margin-left: 4.0rem;
                             &>li{
                                 margin-right: 1.0rem;
+                                width: 4.2rem;
                                 a{
                                     display: block;
                                 }
@@ -150,7 +151,7 @@
                 display: flex;
                 align-items: center;
                 padding-top: 2.2rem;
-                padding-bottom: 8.0rem;
+                padding-bottom: 5.0rem;
                 .footer-logo{
                     .logo-mobile{
                         display: none;

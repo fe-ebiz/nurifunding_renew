@@ -1,5 +1,5 @@
-<header class="header">
-    <section class="header-sect nav-sect">
+<header class="header-new">
+    <section class="header-sect nav-sect nav-white">
         <nav class="nav-area">
             <button type="button" class="btn-open-menu mobile-show">
                 <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/drawer_menu.png" alt="햄버거 메뉴">
@@ -10,7 +10,7 @@
                     <div class="logo-over"><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/logo.png" alt="로고"></div>
                 </a>
             </div>
-            <a href="#none" class="bnt-go-myinfo mobile-show">
+            <a href="#none" class="btn-go-myinfo mobile-show">
                 <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/my_info.png" alt="로고">
             </a>
             <!--메뉴 전체-->
@@ -21,7 +21,8 @@
                             <div class="icon-logo">
                                 <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_logo.png" alt="아이콘 로고">
                             </div>
-                            <div class="login-box">
+                            <!--로그인시에만 보임-->
+                            <div class="login-box status-login">
                                 <div class="name-box">
                                     <p class="p-name"><span class="sty-txt-color-blue">홍길동</span>님
                                     </p>
@@ -29,37 +30,42 @@
                                 </div>
                                 <button type="button" class="btn-logout sty-btn-bar-gray">로그아웃</button>
                             </div>
-                            <!-- <div class="logout-box">
-                                <a href="#" class="btn-go-join">회원가입</a>
-                                <a href="#" class="btn-go-login">로그인</a>
+                            <!--./로그인시에만 보임-->
+                           
+                            <!--로그아웃시에 보임-->
+                            <!-- <div class="logout-box status-logout">
+                                <a href="#" class="btn-go-login sty-btn-bar-gray">로그인</a>
+                                <a href="#" class="btn-go-join sty-btn-bar-gray">회원가입</a>
                             </div> -->
+                            <!--./로그아웃시에 보임-->
                             
                         </div>
                         <button type="button" class="btn-close-menu">
                             <div class="logo-over"><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/btn_close_menu.png" alt="닫기"></div>
                         </button>
                     </div>
-                    <div class="top-menu-info">
+                    <!--로그인시 보임(모바일)-->
+                    <div class="top-menu-info status-login">
                         <ul class="menu-info-ul">
                             <li>
-                                <a href="#">
+                                <a href="#none">
                                     <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_menu_info01.png" alt="아이콘">
                                     <p>나의투자정보</p>
                                 </a>
                                 <li>
-                                    <a href="">
+                                    <a href="#none">
                                         <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_menu_info02.png" alt="아이콘">
                                         <p>나의대출정보</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#none">
                                         <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_menu_info03.png" alt="아이콘">
                                         <p>자동투자설정</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="#none">
                                         <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_menu_info04.png" alt="아이콘">
                                         <p>계좌정보</p>
                                     </a>
@@ -67,16 +73,18 @@
                             </li>
                         </ul>
                     </div>
+                    <!--.//로그인시 보임(모바일)-->
+
                     <div class="top-menu-funding">
                         <ul class="menu-funding-ul">
                             <li>
-                                <a href="">
+                                <a href="#none">
                                     <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_menu_funding01.png" alt="아이콘">
                                     <p class="mark-new">투자하기</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#none">
                                     <img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_menu_funding02.png" alt="아이콘">
                                     <p>대출하기</p>
                                 </a>
@@ -89,48 +97,58 @@
                 <div class="main-menu-area">
                     <ul class="main-menu-ul">
                         <li class="active">
-                            <a href="#" class="main-btn none-go">투자하기</a>
-                            <ul class="sub-menu-ul">
+                            <a href="#none" class="main-btn none-go">투자하기</a>
+                            <!-- <ul class="sub-menu-ul">
                                 <li><a href="#">투자상품</a></li>
                                 <li><a href="#">자동투자설정</a></li>
                                 <li><a href="#">법인투자안내</a></li>
                                 <li><a href="#">투자상품안내</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li>
-                            <a href="#" class="main-btn none-go">대출하기</a>
+                            <a href="#none" class="main-btn none-go">대출하기</a>
                             <ul class="sub-menu-ul">
-                                <li><a href="#">투자상품2</a></li>
-                                <li><a href="#">자동투자설정2</a></li>
-                                <li><a href="#">법인투자안내2</a></li>
-                                <li><a href="#">테스트</a></li>
+                                <li><a href="#none">대출하기</a></li>
+                                <li><a href="#none">미리페이 안내</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" class="main-btn">누리워드</a></li>
-                        <li>
-                            <a href="#" class="main-btn">이용안내</a>
+                        <li><a href="#none" class="main-btn">누리워드</a></li>
+                        <li class="sub-center">
+                            <a href="#none" class="main-btn">이용안내</a>
                             <ul class="sub-menu-ul">
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">공지사항</a></li>
-                                <li><a href="#">자료실</a></li>
+                                <li><a href="#none">FAQ</a></li>
+                                <li><a href="#none">공지사항</a></li>
+                                <li><a href="#none">자료실</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="#" class="main-btn">회사소개</a>
+                        <li class="sub-center">
+                            <a href="#none" class="main-btn">회사소개</a>
                             <ul class="sub-menu-ul">
-                                <li><a href="#">회사소개</a></li>
-                                <li><a href="#">대표이사소개</a></li>
-                                <li><a href="#">기업IR정도</a></li>
+                                <li><a href="#none">회사소개</a></li>
+                                <li><a href="#none">대표이사소개</a></li>
+                                <li><a href="#none">기업IR정도</a></li>
                             </ul>
                         </li>
-                        <li class="mobile-show"><a href="" class="main-btn">마이페이지</a></li>
+                        <!--로그인 시에만 보임-->
+                        <li class="sub-center status-login">
+                            <a href="#none" class="main-btn">마이페이지</a>
+                            <UL class="sub-menu-ul">
+                                <li><a href="#none">투자정보</a></li>
+                                <li><a href="#none">대출정보 설정</a></li>
+                                <li><a href="#none">자동투자</a></li>
+                                <li><a href="#none">회원정보</a></li>
+                                <li><a href="#none">계좌정보</a></li>
+                                <!-- <li><a href="#none">로그아웃</a></li> -->
+                            </UL>
+                        </li>
+                        <!--로그인 시에만 보임-->
                     </ul>
                     <div class="sub-menu-bg-mobile mobile-show"></div>
                 </div>
                 <!--//메인메뉴-->
 
                 <div class="menu-mobile-bottom mobile-show">
-                    <div class="bottom-service">
+                    <!-- <div class="bottom-service">
                         <div class="service-area">
                             <div class="tell-box">
                                 <p class="title">
@@ -139,158 +157,50 @@
                                 </p>
                                 <div class="txt-box">
                                     <p class="p-dot">평일 : 09시~18시 (점심휴무 : 12:30~ 13:30 )</p>
-                                    <p class="p-dot">휴무 :  토, 일, 공휴일</p>
+                                    <p class="p-dot">휴무 : 토, 일, 공휴일</p>
                                 </div>
                             </div>
                             <div class="question-box">
-                                <a href="" class="btn-go-fqa">자주묻는 질문</a>
-                                <a href="" class="btn-go-online">온라인 문의</a>
+                                <a href="#none" class="btn-go-fqa">자주묻는 질문</a>
+                                <a href="#none" class="btn-go-online">온라인 문의</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="bottom-sns">
                         <ul class="sns-ul">
-                            <li><a href=""><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_sns_blog.png" alt="블로그"></a></li>
-                            <li><a href=""><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_sns_cafe.png" alt="카페"></a></li>
-                            <li class="item-kakao"><a href="" ><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_sns_kakao_long.png" alt="카톡"></a></li>
+                            <li><a href="" target="_blank"><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_sns_blog.png" alt="블로그"></a></li>
+                            <li><a href="" target="_blank"><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_sns_cafe.png" alt="카페"></a></li>
+                            <li class="item-kakao"><a href="" target="_blank"><img src="http://design.ebiznetworks.co.kr/lhc/nuri_renew/img/new/common/icon_sns_kakao_long.png" alt="카톡"></a></li>
                          
                         </ul>
                     </div>
                 </div>
             </div>
-            <!--//메뉴전체-->
-            <ul class="menu-member-ul">
-                <li><a href="">회원가입</a></li>
-                <li><a href="">로그인</a></li>
-            </ul>
+            <!--.//메뉴전체-->
+            
+            <div class="menu-member-box">
+
+                <!--로그아웃이에만 나옴-->
+                <!-- <ul class="menu-member-ul status-logout">
+                    <li><a href="#none">로그인</a></li>
+                    <li><a href="#none">회원가입</a></li>
+                </ul> -->
+                <!--./로그아웃이에만 나옴-->
+                
+                <ul class="menu-member-ul menu-member-logout status-login">
+                    <li><a href="#none">로그아웃</a></li>
+                </ul>
+
+            </div>
         </nav>
         <nav class="nav-area-sub mobile-show">
             <ul class="menu-sub-ul mobile-show">
-                <li><a href="#" class="active"><span>홈</span></a></li>
-                <li><a href="#"><span class="mark-dot">투자하기</span></a href="#"></li>
-                <li><a href="#"><span>대출하기</span></a></li>
-                <li><a href="#"><span>누리워드</span></a></li>
+                <li><a href="#none" class="active"><span>홈</span></a></li>
+                <li><a href="#none"><span class="mark-dot">투자하기</span></a href="#"></li>
+                <li><a href="#none"><span>대출하기</span></a></li>
+                <li><a href="#none"><span>누리워드</span></a></li>
             </ul>
         </nav>
         <div class="sub-menu-bg"></div>
     </section>
 </header>
-
-<script>
-$(document).ready(function(){
-    
-    screenSizeCheck();
-
-    let overMenu = null;
-    let subMenuBG = $(".over-on .sub-menu-bg");
-    // $(".menu-area-ul>li:first>a").addClass("over");
-    $(".over-on .main-menu-ul>li .main-btn").hover(function(e){
-        //서브메뉴가 있으면
-        // let sizeWidth 
-        if($(this).siblings(".sub-menu-ul").length > 0){
-            $(this).addClass("over");
-            subMenuBG.show();
-        }
-        else{
-            subMenuBG.hide();
-        }
-
-    }, function(e){ //나가면
-        overMenu = $(this);
-        // console.log(overMenu);
-        $(this).removeClass("over");
-
-        let startY = subMenuBG.offset().top -1;            
-        let endY = startY + subMenuBG.outerHeight();
-        
-        // console.log("마우스: "+e.pageY);
-        if(e.pageY < startY || e.pageY > endY ){
-            // subMenuBG.show();
-            subMenuBG.hide();
-        }
-
-    });
-
-    
-    //서브메뉴 배경
-    subMenuBG.hover(function(){
-        overMenu.addClass("over");
-        
-    },function(){ //나가면
-        overMenu.removeClass("over");
-        subMenuBG.hide();
-    });
-
-    
-    $(".over-on .main-menu-ul .sub-menu-ul").hover(function(){ 
-        $(this).siblings("a").addClass("over");
-        subMenuBG.show();
-    }, function(e){ //나가면
-        $(this).siblings(".over").removeClass("over");
-
-        let startY = subMenuBG.offset().top -1;            
-        let endY = startY + subMenuBG.outerHeight();
-        console.log(startY);
-        console.log("마우스: "+e.pageY);
-        if(e.pageY < startY || e.pageY > endY ){
-            // subMenuBG.show();
-            subMenuBG.hide();
-        }
-    });
-
-    
-    //모바일쪽
-    let menuArea = $(".nav-area .menu-area");
-
-    $(".nav-area .btn-open-menu").on("touchstart",function(e){
-        e.preventDefault();
-        menuArea.animate({
-            'left': "0"
-        },100)
-    });
-    $(".nav-area .btn-close-menu").on("touchstart",function(e){
-        e.preventDefault();
-        menuArea.animate({
-            'left': "-101%"
-        },100)
-    });
-
-    $(".menu-area .main-menu-ul>li").on("touchstart",function(){
-        $(".menu-area .main-menu-ul>li").removeClass("active")
-        $(this).addClass("active");
-    });
-
-
-    $(window).resize(function(){
-        // let sizeWidth = $(window).outerWidth();
-        // console.log(sizeWidth);
-        // if(sizeWidth > 720){
-        //     menuArea.removeAttr("style");
-        // }
-        // else if(sizeWidth <= 720){
-        //     $(".nav-white").removeClass("nav-white");
-        // }
-        screenSizeCheck();
-    });
-
-
-
-});
-
-let screenSizeCheck = function(){
-    let screenWidth = $(window).outerWidth();
-    $(".over-on .main-menu-ul>li .main-btn").removeClass("over");
-    $(".over-on .sub-menu-bg").hide();
-    if(screenWidth > 720){
-        $(".nav-area .menu-area").removeAttr("style");
-        $(".nav-sect").addClass("over-on");
-    }
-    else if(screenWidth <= 720){
-        $(".over-on").removeClass("over-on");
-        $(".nav-white").removeClass("nav-white");
-        
-    }
-}
-
-</script>
-

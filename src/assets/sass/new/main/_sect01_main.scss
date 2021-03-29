@@ -1,7 +1,7 @@
 //메인
 .main-wrap .main-container{
     
-    .sect01{
+    .sect-main{
         // background-color: #126cc3;
         position: relative;
         justify-content: flex-end;
@@ -36,6 +36,18 @@
                         border-right: 1px solid #ddd;
                         // padding: 0 36px;
                         flex-grow: 1;
+                        &:nth-of-type(1){
+                            // background-color: #555;
+                            width: 18%;
+                        }
+                        &:nth-of-type(2){
+                            // background-color: #555;
+                            width: 16%;
+                        }
+                        &:nth-of-type(3){
+                            // background-color: #555;
+                            width: 18%;
+                        }
                         &:last-child{
                             border: none;
                         }
@@ -97,6 +109,7 @@
         }
         .sect-area03{
             // margin-top: auto;
+            z-index: 10;
             width: 100%;
             // height: 70px;
             background-color: #f1f3f4;
@@ -151,6 +164,7 @@
                     }
 
                     .news-info-area{
+                        // overflow-y: hidden;
                         display: flex;
                         align-items: center;
                         margin-left: 6.8rem;
@@ -209,7 +223,7 @@
 @media(max-width: 720px){
 .main-wrap .main-container{
     
-    .sect01{
+    .sect-main{
         display: flex;
         flex-direction: column;
         .sect-area01{
@@ -238,11 +252,15 @@
                         // flex-shrink: 1;
                         // width: 30.0rem;
                         flex-grow: 0;
-                        width: 40%;
+                        // width: 40%;
                         width: 31.0rem;
                         border: 2px solid #ddd;
                         padding-top: 4.6rem;
                         padding-bottom: 4.0rem;
+
+                        &:nth-of-type(-n+3){
+                            width: 31.0rem;
+                        }
                         &:last-child{
                             border: 2px solid #ddd;
                         }
@@ -254,10 +272,10 @@
                             
                         }
                         .p-name{
-                            font-size: 3.15rem;
+                            font-size: 3.2rem;
                         }
                         .p-num{
-                
+                            font-size: 3.55rem;
                         }
                         .over-tip{
                             top: 50%;

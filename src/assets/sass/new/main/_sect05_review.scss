@@ -146,12 +146,8 @@
                             color: white;
                             // margin-top: ;
                             transform: translateY(-50%);
-
-
                           
                         }
-                        
-
 
                         .btn-slide-prev{
                             left: 0;
@@ -170,8 +166,8 @@
                                 height: 100%;
                             }
                         }
-                        .banner01{
-                            background-color: #5237a7;
+                        .item-banner{
+                            
                             height: 100%;
                             .banner-contents{
                                 margin: 0 auto;
@@ -188,7 +184,7 @@
                                 .txt-box{
                                     
                                     p{
-                                        color: white;
+                                        // color: white;
                                         letter-spacing: -0.1px;
                                     }
                                     .p-title{
@@ -208,45 +204,39 @@
                                     }
                                     
                                 }
-                                .img-box{
-                                    width: 22.7rem;
-                                }
+                                
                             }
                             
+                        }
+                        .banner01{
+                            background-color: #5237a7;
+                            .txt-box{
+                                    
+                                p{
+                                    color: #fff;
+                                }
+                            }
+                            .img-box{
+                                width: 22.7rem;
+                            }
+                        }
+                        .banner02{
+                            background-color: #ffde79;
+                            .txt-box{
+                                    
+                                p{
+                                    color: #333;
+                                }
+                            }
+                            .img-box{
+                                // margin-right: 8.0rem;
+                                width: 17.0rem;
+                            }
                         }
                         
                     }
                 }
 
-                .miripay-area{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    .arrow{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        
-                        background-color: #422c86;
-                        width: 30px;
-                        height: 50px;
-                        span{
-                            font-size: 15px;
-                            font-family: 'Nanum Gothic', sans-serif;
-                            font-weight: 800;
-                            color: white;
-                        }
-                    }
-                    .miripay-ul{
-                        // display: flex;
-                        &>li{
-                            display: flex;
-                            .txt-box{
-                                color: white;
-                            }
-                        }
-                    }
-                }
                 
             }
         }
@@ -350,8 +340,7 @@
                   
                             }
                         }
-                        .banner01{
-                  
+                        .item-banner{
                             .banner-contents{
                                 padding-left:4.0rem;
                                 padding-right: 2.7rem;
@@ -380,47 +369,67 @@
                                         letter-spacing: -0.6px;
                                         line-height: 1.3;
                                     }
-                                    
-                                }
-                                .img-box{
-                                    width: 22.4rem;
+                                
                                 }
                             }
                             
                         }
-                        
-                    }
-                }
-
-                .miripay-area{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    .arrow{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        
-                        background-color: #422c86;
-                        width: 30px;
-                        height: 50px;
-                        span{
-                            font-size: 15px;
-                            font-family: 'Nanum Gothic', sans-serif;
-                            font-weight: 800;
-                            color: white;
-                        }
-                    }
-                    .miripay-ul{
-                        // display: flex;
-                        &>li{
-                            display: flex;
+                        .banner01{
+                            background-color: #5237a7;
                             .txt-box{
-                                color: white;
+                                    
+                                p{
+                                    color: #fff;
+                                }
+                            }
+                            .img-box{
+                                width: 22.4rem;
+                            }
+                        }
+                        .banner02{
+                            background-color: #ffde79;
+                            .txt-box{
+                                    
+                                p{
+                                    color: #333;
+                                }
+                            }
+                            .img-box{
+                                width: 16.4rem;
                             }
                         }
                     }
                 }
+
+                // .miripay-area{
+                //     display: flex;
+                //     justify-content: space-between;
+                //     align-items: center;
+                //     .arrow{
+                //         display: flex;
+                //         justify-content: center;
+                //         align-items: center;
+                        
+                //         background-color: #422c86;
+                //         width: 30px;
+                //         height: 50px;
+                //         span{
+                //             font-size: 15px;
+                //             font-family: 'Nanum Gothic', sans-serif;
+                //             font-weight: 800;
+                //             color: white;
+                //         }
+                //     }
+                //     .miripay-ul{
+                //         // display: flex;
+                //         &>li{
+                //             display: flex;
+                //             .txt-box{
+                //                 color: white;
+                //             }
+                //         }
+                //     }
+                // }
                 
             }
         }

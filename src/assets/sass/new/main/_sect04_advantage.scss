@@ -28,6 +28,7 @@
                         margin-top: 4.6rem;
                         line-height: 1.6;
                         font-weight: 300;
+                        
                     }
                 }
                 .contents-area{
@@ -52,6 +53,11 @@
                             font-size: 2.4rem;
                             &:last-of-type{
                                 margin-bottom: 0;
+                            }
+                            p{
+                                .span-mark {
+                                    font-weight: 600;
+                                }
                             }
                         }
                     }
@@ -90,10 +96,14 @@
                 
                         .title-main{
                             font-size: 4.8rem;
-                            letter-spacing: -0.34rem;
+                            letter-spacing: -3.5px;
                         }
                         .title-sub{
                             font-size: 2.8rem;
+                            .span-block{
+                                display: block;
+                            }
+                            
                         }
                     }
                     .contents-area{
@@ -108,13 +118,26 @@
                         .emphasis-ul{
                             &>li{
                                 width: 60.0rem;
+                                height: 10.0rem;
+                                p{
+                                    font-size: 3.25rem;
+                                    letter-spacing: -1.6px;
+                                    
+                                }
                             }
                         }
                     }
                 }
                 .cont02{
                     .contents-area{
+                        margin: 0 auto;
                         margin-top: 13.4rem;
+                        .img-box{
+                            
+                            img{
+                                width: 60.0rem;
+                            }
+                        }
                     }
                 }
             }

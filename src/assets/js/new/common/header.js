@@ -28,7 +28,6 @@ $(document).ready(function(){
             // subMenuBG.show();
             subMenuBG.hide();
         }
-
     });
 
     
@@ -50,8 +49,8 @@ $(document).ready(function(){
 
         let startY = subMenuBG.offset().top -1;            
         let endY = startY + subMenuBG.outerHeight();
-        console.log(startY);
-        console.log("마우스: "+e.pageY);
+        // console.log(startY);
+        // console.log("마우스: "+e.pageY);
         if(e.pageY < startY || e.pageY > endY ){
             // subMenuBG.show();
             subMenuBG.hide();
@@ -64,12 +63,14 @@ $(document).ready(function(){
 
     $(".nav-area .btn-open-menu").on("touchstart",function(e){
         e.preventDefault();
+        $("html, body").addClass('menu-overflow-hidden');
         menuArea.animate({
             'left': "0"
         },100)
     });
     $(".nav-area .btn-close-menu").on("touchstart",function(e){
         e.preventDefault();
+        $("html, body").removeClass('menu-overflow-hidden');
         menuArea.animate({
             'left': "-101%"
         },100)
@@ -77,7 +78,9 @@ $(document).ready(function(){
 
     $(".menu-area .main-menu-ul>li").on("touchstart",function(){
         $(".menu-area .main-menu-ul>li").removeClass("active")
+        $(".menu-area .main-menu-ul>li").removeClass("line-none")
         $(this).addClass("active");
+        $(this).prev().addClass("line-none");
     });
 
 
@@ -93,7 +96,9 @@ $(document).ready(function(){
         screenSizeCheck();
     });
 
+    subMenuCenter();
 
+    setTouchNone();
 
 });
 
@@ -109,5 +114,36 @@ let screenSizeCheck = function(){
         $(".over-on").removeClass("over-on");
         // $(".nav-white").removeClass("nav-white");
         
+    }
+}
+
+
+let subMenuCenter = function(){
+    let subObj = $(".header-new .over-on .sub-center");
+    // subObj.css("padding","10.0rem");
+    let mainW = subObj.find(".main-btn").outerWidth();
+    let subW = subObj.find(".sub-menu-ul").outerWidth();
+
+    let resultW = (mainW/2);
+    // console.log(resultW);
+    subObj.find(".sub-menu-ul").css({
+        "margin-left": String(resultW*0.1)+"rem"
+    });
+}
+
+let setTouchNone = function(){
+    let screenWidth = $(window).outerWidth();
+    
+    if(screenWidth <= 720){
+        $(".header-new .main-btn").on("click", function(e){
+            if($(this).siblings('.sub-menu-ul').length > 0){
+                e.preventDefault();
+                // console.log("작동");
+            }
+            if($(this).siblings('.temp-sub-menu-ul').length > 0){
+                e.preventDefault();
+                // console.log("작동");
+            }
+        });
     }
 }

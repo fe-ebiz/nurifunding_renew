@@ -133,6 +133,7 @@
                     .title-main{
                         
                     }
+                    
                 }
 
                 .contents-area{
@@ -151,6 +152,7 @@
                             }
                             .title{
                                 font-size: 4.1rem;
+                                letter-spacing: -1px;
                             }
                             .title01{
                                 color: #398fe1;
@@ -164,6 +166,7 @@
                             .p-txt{
                                 font-size: 2.9rem;
                                 line-height: 1.26;
+                                letter-spacing: -0.7px;
                             }
                             .sub-area{
                                 display: flex;
@@ -174,21 +177,23 @@
                                     .p-sub{
                                         text-align: left;
                                         font-size: 3.0rem;
+                                        letter-spacing: -0.7px;
                                         margin-top: 0;
                                     }
                                     .p-hesh{
                                         text-align: left;
                                         font-size: 2.6rem;
+                                        letter-spacing: 0;
                                         margin-top: 1.8rem;
                                     }
                                     .p-hesh01{
-                                        
+                                        color: #398fe1;
                                     }
                                     .p-hesh02{
-                                        
+                                        color: #398fe1;
                                     }
                                     .p-hesh03{
-                                        
+                                        color: #398fe1;
                                     }
                                 }
 

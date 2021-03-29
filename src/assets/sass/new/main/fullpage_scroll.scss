@@ -1,5 +1,6 @@
 .overflow-hidden{
     overflow: hidden;
+    // height: auto;
 }
 
 .fullpage-area{
@@ -9,7 +10,7 @@
 
 @media(max-width:720px){
 .fullpage-area{
-    
+    height: auto;   
 }
 }
 

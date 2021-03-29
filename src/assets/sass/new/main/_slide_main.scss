@@ -104,6 +104,53 @@
                     }
                 }
             }
+            .slide-main02{
+            
+                overflow: hidden;
+                padding-top: 9.0rem;
+                width: 100%;
+                height: 100%;
+                background-color: #126cc3
+                ;
+                .slide-contents{
+                    // width: 150.0rem;
+                    max-width: 126.0rem;
+                    height: 100%;
+                    margin: 0 auto;
+                    // bottom: 0;
+                    position: relative;
+                    .title-box{
+                        position: absolute;
+                        left: 3.0rem;
+                        bottom: 21.0rem;
+                        .title-main{
+                            color: #fff;
+                            font-size: 5.45rem;
+                            text-align: center;
+                            line-height: 1.2;
+                            .span-yellow{
+                                color: #ffc800;
+                            }
+                        }
+                        .title-sub{
+                            color: #fff;
+                            font-size: 3.65rem;
+                            text-align: center;
+                            margin-top: 3.5rem;
+                        }
+                    }
+                    .img-box{
+                        position: absolute;
+                        left: 56rem;
+                        bottom: 0;
+                        width: 69.0rem;
+                        height: 50.0rem;
+                        .img-mobile{
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -208,6 +255,44 @@
                             left: 2.4rem;
                             bottom: 0;
                             width: 69.6rem;
+                            .img-pc{
+                                display: none;
+                            }
+                            .img-mobile{
+                                // position: absolute;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .slide-main02{
+                    padding-top: 10.0rem;
+                    .slide-contents{
+                        height: auto;
+                        .title-box{
+                            // overflow: hidden;
+                            position: relative;
+                            left: 0;
+                            bottom: 0;
+                            margin: 0 auto;
+                            .title-main{
+                                font-size: 5.45rem;
+                                font-weight: 500;
+                            }
+                            .title-sub{
+                                margin-top: 3.2rem;
+                                font-size: 3.6rem;
+                                font-weight: 300;
+                            }
+                        }
+                        .img-box{
+                            margin-top: 3.2rem;
+                            position: relative;
+                            // overflow: hidden;
+                            left: 2.4rem;
+                            bottom: 0;
+                            width: 67.8rem;
+                            // height: 10.0rem;
                             .img-pc{
                                 display: none;
                             }

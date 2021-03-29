@@ -11,7 +11,7 @@ setSizeWidthCheck = function(info){
         let topPos = info.selectBox.eq(info.index).position().top;
         let correntPos = info.selectBox.eq(0).position().top + 1;
         // console.log(correntPos);
-        // window.scrollTo(0,(topPos - correntPos));
+        window.scrollTo(0,(topPos - correntPos));
         // console.log(info.index);
     }
     else{        
@@ -227,7 +227,6 @@ setMousewheel = function(info){
 //리사이즈 체크
 fullResizeCheck = function(info){
     $(window).resize(function(){
-        
         if(info.setOn === false) {return};
         
         //사이즈변경으로 인한 무브박스 위치 설정
